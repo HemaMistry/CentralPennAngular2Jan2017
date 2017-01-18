@@ -1,0 +1,18 @@
+<header>
+  <h1>
+    {{title}}
+  </h1>
+  <ul>
+    <li><a [routerLink]="['']">Home</a></li>
+    <!--<li><a [routerLink]="['directory', '4']">Directory</a></li>-->
+    <li><a [routerLink]="['directory']">Directory</a></li>
+  </ul>
+</header>
+<section id="main">
+
+  <router-outlet></router-outlet>
+  <!--<app-home [game]="game" (onEvent)="onAction($event)">Loading...</app-home>-->
+  <!--<app-home (onEvent)="onAction($event)">Loading...</app-home>-->
+
+</section>
+

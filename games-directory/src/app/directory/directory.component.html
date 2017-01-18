@@ -1,0 +1,35 @@
+
+<h2>Game Listing</h2>
+
+<form id="filter">
+  <label>Filter By Name:</label>
+  <input type="text" [value]="searchTerm" (input)="searchTerm = $event.target.value">
+</form>
+
+<ul id="game_list">
+  <li *ngFor="let game of games | filter:searchTerm">
+    <strong>{{game.name | uppercase}}</strong> - {{game.publisher}}
+  </li>
+</ul>
+
+<form id="add_game">
+  <label>Game Name:</label>
+  <input type="text" [value]="addGameName" (input)="addGameName = $event.target.value">
+  <label>Game Publisher:</label>
+  <input type="text" [value]="addGamePublisher" (input)="addGamePublisher = $event.target.value">
+  <button (click)="fbPostData(addGameName, addGamePublisher)">Add Game</button>
+</form>
+
+
+<!--<p [ngClass]="classes">-->
+  <!--This is determined by the css class map-->
+<!--</p>-->
+<!--<p *ngIf="showParagraph">This will be shown if true in the TS</p>-->
+
+
+<!--<p>-->
+  <!--directory works!-->
+<!--</p>-->
+
+<!--<p>ID: {{urlId}}</p>-->
+

@@ -3,7 +3,10 @@
 
 <form id="filter">
   <label>Filter By Name:</label>
-  <input type="text" [value]="searchTerm" (input)="searchTerm = $event.target.value">
+  <!-- `[(ngModel)]` should work outside of a `<form>` *without* the `name` attribute
+       Inside a `<form>`, the `name` attribute must be specified for each form input control
+       ref: https://angular.io/docs/ts/latest/guide/forms.html -->
+  <input type="text" [(ngModel)]="searchTerm" name="nameFilter"> <!--[value]="searchTerm" (input)="searchTerm = $event.target.value">-->
 </form>
 
 <ul id="game_list">
